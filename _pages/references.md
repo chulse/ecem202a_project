@@ -15,3 +15,6 @@ This paper uses audio processing as a way to care for and monitor elderly people
 ### [4] [TinyEARS: Spying on House Appliances with Audio Sensor Nodes. Taysi et al.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.441.8908&rep=rep1&type=pdf)
 This paper uses audio to detect appliance states and correlate them with power draw. They try many different features and model types, and are able to succesffully monitor different states of a small number of appliances, along with how long they are on. Its more focused on power draw for given appliances, but is able to monitor how long they are on for pretty succesfully using several different types of models.
 
+### [5] [Ubicoustics: Plug-and-Play Acoustic Activity Recognition. Chris Harrison et al.](https://dl.acm.org/doi/10.1145/3242587.3242609)
+This paper uses audio recognition to enable context-aware computing, where a device can tell what room it is in by recognizing certain appliance noises. The coolest part was how they synthesized new datasets by playing sound effects with emulated acoustic properties of different rooms. This let them train on a very large, high quality labeled dataset.
+

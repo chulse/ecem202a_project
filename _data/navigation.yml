@@ -1,9 +1,13 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "About"
-    url: /about/
+  - title: "Abstract"
+    url: /
+  - title: "Timeline"
+    url: /timeline/
+  - title: "Results"
+    url: /results/
+  - title: "Challenges"
+    url: /challenges/
+  - title: "Presentations"
+    url: /presentations/
+  - title: "References"
+    url: /references/

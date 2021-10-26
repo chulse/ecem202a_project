@@ -51,22 +51,25 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Michelle, Jackie, Chester"
   avatar : "/assets/images/bio-photo.jpg"
+  name   : "Project Name"
   bio    : "Placeholder sidebar."
   links:
+    - label: "Chester Hulse"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://instagram.com/"
+    - label: "Jackie Lam"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://instagram.com/"
+    - label: "Michelle Tan"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://instagram.com/"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
 
 footer:
   links:

@@ -52,7 +52,7 @@ plugins:
 
 author:
   avatar : "/assets/images/bio-photo.jpg"
-  name   : "Project Name"
+  name   : "Simple Home Appliance Monitoring"
   bio    : "Placeholder sidebar."
   links:
     - label: "Chester Hulse"

@@ -1,0 +1,9 @@
+main:
+  - title: "Abstract"
+    url: /
+  - title: "Report"
+    url: /report/
+  - title: "Proposal"
+    url: /proposal/
+  - title: "Presentations"
+    url: /presentations/

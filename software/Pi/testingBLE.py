@@ -1,58 +1,46 @@
 ADDRESS = (
     "91:0C:EC:15:4A:FE"
 )
+
+
+# -*- coding: utf-8 -*-
 """
-Service Explorer
-----------------
-An example showing how to access and print out the services, characteristics and
-descriptors of a connected GATT server.
-Created on 2019-03-25 by hbldh <henrik.blidh@nedomkull.com>
+Notifications
+-------------
+Example showing how to add notifications to a characteristic and handle the responses.
+Updated on 2019-07-03 by hbldh <henrik.blidh@gmail.com>
 """
 
 import sys
-import platform
 import asyncio
-import logging
+import platform
 
 from bleak import BleakClient
 
-logger = logging.getLogger(__name__)
+
+# you can change these to match your device or override them from the command line
+CHARACTERISTIC_UUID = "00002a57-0000-1000-8000-00805f9b34fb"
 
 
-async def main(address):
+
+def notification_handler(sender, data):
+    """Simple notification handler which prints the data received."""
+    print("{0}: {1}".format(sender, int.from_bytes(bytes=data,byteorder="little", signed=False)))
+
+
+async def main(address, char_uuid):
     async with BleakClient(address) as client:
-        logger.info(f"Connected: {client.is_connected}")
+        print(f"Connected: {client.is_connected}")
 
-        for service in client.services:
-            logger.info(f"[Service] {service}")
-            for char in service.characteristics:
-                if "read" in char.properties:
-                    try:
-                        value = bytes(await client.read_gatt_char(char.uuid))
-                        logger.info(
-                            f"\t[Characteristic] {char} ({','.join(char.properties)}), Value: {value}"
-                        )
-                    except Exception as e:
-                        logger.error(
-                            f"\t[Characteristic] {char} ({','.join(char.properties)}), Value: {e}"
-                        )
-
-                else:
-                    value = None
-                    logger.info(
-                        f"\t[Characteristic] {char} ({','.join(char.properties)}), Value: {value}"
-                    )
-
-                for descriptor in char.descriptors:
-                    try:
-                        value = bytes(
-                            await client.read_gatt_descriptor(descriptor.handle)
-                        )
-                        logger.info(f"\t\t[Descriptor] {descriptor}) | Value: {value}")
-                    except Exception as e:
-                        logger.error(f"\t\t[Descriptor] {descriptor}) | Value: {e}")
+        await client.start_notify(char_uuid, notification_handler)
+        await asyncio.sleep(5.0)
+        await client.stop_notify(char_uuid)
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    asyncio.run(main(sys.argv[1] if len(sys.argv) == 2 else ADDRESS))
+    asyncio.run(
+        main(
+            sys.argv[1] if len(sys.argv) > 1 else ADDRESS,
+            sys.argv[2] if len(sys.argv) > 2 else CHARACTERISTIC_UUID,
+        )
+    )

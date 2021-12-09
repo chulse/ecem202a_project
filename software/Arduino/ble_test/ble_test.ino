@@ -51,10 +51,23 @@ void loop() {
     Serial.println(central.address());
     // turn on the LED to indicate the connection:
     digitalWrite(LED_BUILTIN, HIGH);
-
+    unsigned int current_time = millis();
     while (central.connected()){
-      delay(1000);
-      classifierCharacteristic.setValue(millis()); //this number can be set to whatever we detect happening and then received on the RPI.
+        if (millis() > current_time+5000){ //can't immediately start doing things while pairing occurs
+          Serial.print("Simulating blender: ");
+          for (int i = 0; i<8; i++) { //pretend blender is on for 8 seconds, should cause a notification.
+            delay(1000);
+            classifierCharacteristic.setValue(0);//number for blender
+          }
+          
+          delay(5000); //wait 30 seconds before the other type of testing
+          
+          //pretend fridge was open for 7 seconds, should cause a notification.
+          Serial.print("Simulating fridge: ");
+          classifierCharacteristic.setValue(4);//number for fridge
+          delay(7000);
+          classifierCharacteristic.setValue(4);//number for fridge
+        }
       } // keep looping while connected
     
     // when the central disconnects, turn off the LED:

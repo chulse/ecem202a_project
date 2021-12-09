@@ -42,6 +42,10 @@ ADDRESS = (
     "91:0C:EC:15:4A:FE"
 )
 
+#Jackie address
+ADDRESS = (
+    "29:17:1d:93:48:e7"
+)
 def notification_handler(sender, data):
     """Simple notification handler which prints the data received."""
     event_number = int.from_bytes(bytes=data,byteorder="little", signed=False)

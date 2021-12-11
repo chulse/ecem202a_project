@@ -11,17 +11,10 @@ Current smart homes require many smart devices all reporting their status and co
 ### Hardware
 #### Arduino Nano 33 BLE
 This is a small low cost device with a microphone and BLE. It is also very common for IOT project examples online and has many libraries built just for it. It allowed us to iterate our design and prototype quickly.
-![Arduino 1Nano 33 BLE](/docs/assets/images/bio-photo.jpg)
-![Arduino N2ano 33 BLE](docs/assets/images/bio-photo.jpg)
-![Arduino Na3no 33 BLE](/assets/images/bio-photo.jpg)
-![Arduino Nan4o 33 BLE](assets/images/bio-photo.jpg)
-![Arduino Nano5 33 BLE](/images/bio-photo.jpg)
-![Arduino Nano 633 BLE](images/bio-photo.jpg)
-![Arduino Nano 373 BLE](/bio-photo.jpg)
-![Arduino Nano 3938 BLE](bio-photo.jpg)
-#### Raspbeery Pi Zero W
+![ArduinoNano33BLE]({{ site.url }}{{ site.baseurl }}/assets/images/nano33ble.jpg){: .align-center}
+#### Raspberry Pi Zero W
 This is again a small low-cost device that allowed us to prototype quickly. The RPI Zero W is a small computer capable of running linux and python, while also using BLE to connect to one or more Arduino Nano 33 BLE edge devices. We envision it acting as a hub in a house, connecting to a cheap low-cost appliance monitoring device in every room, capable of monitoring the whole home over BLE.
-![Raspberry PI Zero W](bio-photo.jpg)
+![RPIZeroW]({{ site.url }}{{ site.baseurl }}/assets/images/RPI.jpg){: .align-center}
 
 ### Datasets
 One important piece of our project is creating a product that can be used in a variety of situations without a specific setup. One key way we accomplish this is to train our machine learning classifier on public datasets for many different kinds of the same appliance. We used two main datasets for this, [Kitchen20]((https://github.com/marc-moreaux/kitchen20) and [HAASD](https://github.com/JYongSmile/paper-2018-HAASD/tree/master/HAASD). For appliances that we couldn't find reliable sources for, we recorded our own data at two of our apartments and then used a third apartment as our "test" set, where we tested our end result on data that wasn't used to train our model. This gave us a pretty robust classification system for the appliances we were targeting, assuming only one was on at once. One thing we think would be interesting in the future would be classifying multiple devices at once. This could potentially  be achieved by training the classifier on combined datasets or take a more elegant signal processing approach.

@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Placeholder title
+title: SHAM
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -51,25 +51,24 @@ plugins:
   - jekyll-include-cache
 
 author:
-  avatar : "/assets/images/bio-photo.jpg"
   name   : "Simple Home Appliance Monitoring"
-  bio    : "Placeholder sidebar."
+  bio    : "Project submission for ECE M202A."
   links:
     - label: "Chester Hulse"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://instagram.com/"
+      icon: "fas fa-male"
+      url: "https://chulse.github.io/ecem202a_project/"
     - label: "Jackie Lam"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://instagram.com/"
+      icon: "fas fa-male"
+      url: "https://chulse.github.io/ecem202a_project/"
     - label: "Michelle Tan"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://instagram.com/"
+      icon: "fas fa-male"
+      url: "https://chulse.github.io/ecem202a_project/"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://"
+      url: "https://chulse.github.io/ecem202a_project/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/chulse/ecem202a_project/"
 
 footer:
   links:

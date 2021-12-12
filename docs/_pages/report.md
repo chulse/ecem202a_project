@@ -6,6 +6,7 @@ title: "Report"
 ## Abstract
 
 Current smart homes require many smart devices all reporting their status and collecting data. For many homes, the overhead and cost of replacing "dumb" appliances is not worth the new features that these new smart appliances provide. We would like to use a cheap single device placed in a per-room basis to monitor appliances and alert home-owners of unusual activity, like the fridge being left open, to "smartify" a home without replacing or upgrading all of its current appliances individually. We have achieved this on low power embedded device by monitoring ambient noises to classify which appliances are currently in use. We have successfully been able to classify home appliances with above 90% accuracy when they are in use by themselves, but future work is necessary before our system is robust enough to detect simultaneous appliances and truly compete with a home fully equipped with smart devices.
+![BlockDiagram]({{ site.url }}{{ site.baseurl }}/assets/images/block_diagram.PNG){: .align-center}
 
 ## Technical Approach
 ### Hardware
@@ -37,7 +38,12 @@ The raspberry pi bluetooth code was created to be independent from the arduino t
 
 ## Results
 
-Our classifier is able to reach a test accuracy of 91%. For a list of 10 appliances this is a significant achievement. Our biggest struggle was properly classifying the water kettle, which is surprising considering how distinct the sound is to our human ears. This was also true of our experiments in person, the kettle misclassified much more often than any of our other appliances. If I were to guess, I'd say that this was because of distortions in our different microphones, the relatively high frequency of the sound was poorly captured by our audio devices.
+Our classifier is able to reach a test accuracy of 91%. For a list of 10 appliances this is a significant achievement. Our biggest struggle was properly classifying the water kettle, which is surprising considering how distinct the sound is to our human ears. 
+
+![ConfusionMatrix]({{ site.url }}{{ site.baseurl }}/assets/images/confusion.png){: .align-center}
+
+This was also true of our experiments in person, the kettle misclassified much more often than any of our other appliances, while the rest seemed to have a test accuracy around 90%, as shown in our demo video. If I were to guess, I'd say that this was because of distortions in our different microphones, the relatively high frequency of the sound was poorly captured by our audio devices.
+
 
 ## Future Work
 We've thought of a couple future directions this project could take:
